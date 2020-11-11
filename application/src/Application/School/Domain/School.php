@@ -6,7 +6,7 @@ namespace App\Application\School\Domain;
 
 use App\Application\School\Command\CreateSchool;
 
-class School
+final class School
 {
     private SchoolName $name;
 

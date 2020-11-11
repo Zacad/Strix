@@ -1,3 +1,8 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+school_index:
+  path: /school
+  controller: App\Infrastructure\Controller\SchoolController::index
+  methods: GET
