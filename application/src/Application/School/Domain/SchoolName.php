@@ -4,7 +4,7 @@
 namespace App\Application\School\Domain;
 
 
-use App\Application\Shared\domain\ValueObject;
+use App\Application\Shared\Domain\ValueObject;
 
 /**
  * Class SchoolName
@@ -14,11 +14,16 @@ final class SchoolName
 {
     private string $name;
 
+    public static function fromString(string $name)
+    {
+        return new SchoolName($name);
+    }
+
     /**
      * SchoolName constructor.
      * @param string $name
      */
-    public function __construct(string $name)
+    private function __construct(string $name)
     {
         $this->name = $name;
     }
@@ -26,7 +31,7 @@ final class SchoolName
     /**
      * @return string
      */
-    public function getName(): string
+    public function name(): string
     {
         return $this->name;
     }
@@ -35,4 +40,5 @@ final class SchoolName
     {
         return $this->name === $secondSchoolName->getName();
     }
+
 }
