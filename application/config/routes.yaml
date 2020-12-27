@@ -4,5 +4,5 @@
 
 school_index:
   path: /school
-  controller: App\Infrastructure\Controller\SchoolController::index
+  controller: App\Learning\Infrastructure\Controller\SchoolController::index
   methods: GET

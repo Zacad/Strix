@@ -26,11 +26,11 @@ services:
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    App\Infrastructure\Controller\:
-        resource: '../src/Infrastructure/Controller/'
+    App\Learning\Infrastructure\Controller\:
+        resource: '../src/Learning/Infrastructure/Controller/'
         tags: ['controller.service_arguments']
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    App\Application\Shared\CommandBus: '@App\Infrastructure\CommandBusAdapter'
+    App\Shared\CommandBus: '@App\Learning\Infrastructure\CommandBusAdapter'

@@ -1,3 +1,3 @@
 services:
-  App\Application\School\Command\CreateSchoolhandler:
+  App\Learning\Application\Command\CreateSchoolHandler:
     tags: [ messenger.message_handler ]
