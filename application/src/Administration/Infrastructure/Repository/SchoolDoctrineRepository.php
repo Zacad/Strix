@@ -1,15 +1,17 @@
 <?php
 
 
-namespace App\Learning\Infrastructure\Repository;
+namespace App\Administration\Infrastructure\Repository;
 
 
-use App\Learning\Domain\Repository;
-use App\Learning\Domain\School;
+use App\Administration\Domain\School;
 use App\Shared\Domain\Uuid;
+use App\Administration\Domain\SchoolRepository;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
-class SchoolRepository extends ServiceEntityRepository implements Repository
+
+class SchoolDoctrineRepository extends ServiceEntityRepository implements SchoolRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

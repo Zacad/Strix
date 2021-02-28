@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Learning\Command;
+namespace App\Administration\Application\Command;
 
 
 use App\Shared\Command;

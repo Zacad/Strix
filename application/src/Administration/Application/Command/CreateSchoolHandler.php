@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Learning\Command;
+namespace App\Administration\Application\Command;
 
 
 class CreateSchoolHandler
@@ -9,7 +9,7 @@ class CreateSchoolHandler
 
     public function handle(CreateSchool $command)
     {
-        return [1,2,3];
+        $schoolName = new SchoolName($command->getName());
     }
 
     public function __invoke(CreateSchool  $command) {

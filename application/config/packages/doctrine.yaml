@@ -10,10 +10,10 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            App:
+            Learning:
                 is_bundle: false
                 type: php
                 #dir: '%kernel.project_dir%/src/Infrastructure/Entity'
                 dir: '%kernel.project_dir%/config/doctrine/mapping'
-                prefix: 'App\Application'
-                alias: App
+                prefix: 'App\Learning\Domain'
+                alias: Learning

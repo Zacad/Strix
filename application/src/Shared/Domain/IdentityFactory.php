@@ -8,7 +8,7 @@ use App\Shared\Service\UuidValidatorInterface;
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
 
-final class UuidFactory
+final class IdentityFactory
 {
     /**
      * @var UuidValidatorInterface
@@ -20,17 +20,18 @@ final class UuidFactory
         $this->uuidValidator = $uuidValidator;
     }
 
-    public function fromString(string $uuidString): Uuid
+    public function fromString(string $uuidString): Identity
     {
         if ($this->uuidValidator->isValid($uuidString)) {
-            return new Uuid($uuidString);
+            $uuid = \Ramsey\Uuid\Uuid::fromString($uuidString);
+            return new Identity($uuid);
         }
         throw new InvalidValueException('this is not correct Uuid');
     }
 
-    public function generateNew(): Uuid
+    public function generateNew(): Identity
     {
         $ramseyUuid = RamseyUuid::uuid4();
-        return new Uuid($ramseyUuid->toString());
+        return new Identity($ramseyUuid);
     }
 }

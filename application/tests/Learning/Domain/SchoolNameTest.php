@@ -4,7 +4,7 @@
 namespace App\Tests\Learning\Domain;
 
 
-use App\Learning\Domain\SchoolName;
+use App\Administration\Domain\SchoolName;
 use PHPUnit\Framework\TestCase;
 
 class SchoolNameTest extends TestCase

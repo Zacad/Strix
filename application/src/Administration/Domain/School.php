@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Learning\Domain;
+namespace App\Administration\Domain;
 
 
-use App\Learning\Command\CreateSchool;
+use App\Administration\Application\Command\CreateSchool;
 use App\Shared\Domain\Uuid;
-use App\Shared\Domain\UuidFactory;
+use App\Shared\Domain\IdentityFactory;
 
 final class School
 {

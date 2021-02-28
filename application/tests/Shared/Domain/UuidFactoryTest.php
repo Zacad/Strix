@@ -4,8 +4,9 @@
 namespace App\Tests\Shared\Domain;
 
 
+use App\Shared\Domain\Identity;
 use App\Shared\Domain\InvalidValueException;
-use App\Shared\Domain\UuidFactory;
+use App\Shared\Domain\IdentityFactory;
 use App\Shared\Service\UuidValidatorInterface;
 use App\Infrastructure\Service\UuidValidatorAdapter;
 use PHPUnit\Framework\TestCase;
@@ -27,18 +28,18 @@ class UuidFactoryTest extends TestCase
     public function testCreateFromString()
     {
         $this->validator->method('isValid')->willReturn(true);
-        $factory = new UuidFactory($this->validator);
+        $factory = new IdentityFactory($this->validator);
         $uuidObject = Uuid::uuid4();
 
         $uuid = $factory->fromString($uuidObject->toString());
 
-        $this->assertInstanceOf(\App\Shared\Domain\Uuid::class, $uuid);
+        $this->assertInstanceOf(Identity::class, $uuid);
     }
 
     public function testFailCreateFromString()
     {
         $this->validator->method('isValid')->willReturn(false);
-        $factory = new UuidFactory($this->validator);
+        $factory = new IdentityFactory($this->validator);
         $wrongUuid = 'some wrong string';
 
         $this->expectException(InvalidValueException::class);
@@ -51,9 +52,9 @@ class UuidFactoryTest extends TestCase
     public function testGenerateNew()
     {
         $this->validator->method('isValid')->willReturn(true);
-        $factory = new UuidFactory($this->validator);
+        $factory = new IdentityFactory($this->validator);
         $uuid = $factory->generateNew();
 
-        $this->assertInstanceOf(\App\Shared\Domain\Uuid::class, $uuid);
+        $this->assertInstanceOf(Identity::class, $uuid);
     }
 }

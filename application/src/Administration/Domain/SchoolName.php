@@ -1,10 +1,9 @@
 <?php
 
+declare(strict_types=1);
 
-namespace App\Learning\Domain;
+namespace App\Administration\Domain;
 
-
-use App\Shared\Domain\ValueObject;
 
 /**
  * Class SchoolName
